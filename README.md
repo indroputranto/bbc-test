@@ -20,7 +20,8 @@ $ npm run prod
 English page
 ```
 $ gulp ejs-english
-
+```
 Hindi page
 ```
 $ gulp ejs-hindi 
+```
