@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>BBC | <%= hindiData['hero_1_title'] %></title>
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+  </head>
+
+  <body class="app english">
+    <div class="container">
+      
+      
+      <section class="top">
+        <div class="languageBar">
+          भाषा स्विच करें:
+            <a href="<%= link %>">English</a>
+        </div>
+        <div class="title">
+          <h1><%= hindiData['hero_1_title'] %></h1>
+        </div>
+        <div class="subtitle">
+          <span class="time"><%= hindiData['article-info_1_date'] %></span>
+          <span class="author"><%= hindiData['article-info_1_byline'] %></span>
+          <span class="category">वर्ग: <a href="<%= hindiData['article-info_1_category_url'] %>"><%= hindiData['article-info_1_category'] %></a></span>
+        </div>
+      </section>
+
+      <section class="banner">
+        <div class="image">
+          <img
+          src="<%= hindiData['hero_1_image'] %>"
+          alt=""
+          class="img-fluid"
+        />
+        <div class="text">
+          <p class="strong"><%= hindiData['p_1_value'] %></p>
+        </div>
+        </div>
+        
+      </section>
+
+      <section class="content">
+        <p><%= hindiData['p_2_value'] %></p>
+        <p><%= hindiData['p_3_value'] %></p>
+        <p><%= hindiData['p_4_value'] %></p>
+        <p><%= hindiData['p_5_value'] %></p>
+        <div class="cigSimulator">
+          
+          <div class="cityPicker">
+            <p class="title">अपना शहर चुनें:</p>
+            <select name="cities" id="cities" onChange="check();">
+                  <option>अपना शहर चुनें</option>
+              <% for (name in cityData.name) { %>
+                  <option value="<%= name %>"><%= cityData.name[name] %></option>
+              <% } %>
+            </select>  
+          </div>
+          
+          <div class="aqiNumber">
+            <p class="title">AQI नंबर:</p>
+              <% for (aqi in cityData.aqi) { %>
+                  <span class="result aqi <%= aqi %>"><%= cityData.aqi[aqi] %></span>
+              <% } %>
+          </div>
+
+          <div class="cigaretteNumber">
+            <p class="title">सिगरेट की संख्या आपने प्रति दिन धूम्रपान किया है:</p>
+            <div id="cigText">
+              <% for (cigg in cityData.cigg) { %>
+                  <span class="result cigg <%= cigg %>"><%= cityData.cigg[cigg] %></span>
+                  <!-- <img src="img/ciggrette_icon.png" alt="" class="img-fluid"> -->
+              <% } %>
+            </div>
+            <div id="ciggImageContainer"></div>
+            
+          </div>
+        
+        </div>
+
+        <p class="subtext"><%= hindiData['p_6_value'] %></p>
+        <p class="subtext"><%= hindiData['p_7_value'] %></p>
+        <p class="subtext"><%= hindiData['p_8_value'] %></p>
+        <p class="subtext"><%= hindiData['p_9_value'] %></p>
+        <p class="subtext"><%= hindiData['p_10_value'] %></p>
+      </section>
+    </div><!--end container-->
+  </body>
+  <script type="text/javascript">
+    function check() {
+
+      //clear all previous entries
+      var allAqi = document.getElementsByClassName('aqi');
+      for(i=0;i<allAqi.length;i++) {
+        allAqi[i].style.display = 'none';
+      }
+      var allCigg = document.getElementsByClassName('cigg');
+      for(i=0;i<allCigg.length;i++) {
+        allCigg[i].style.display = 'none';
+      }
+      //look for the value of the dropdown
+      var dropdown = document.getElementById("cities");
+      var current_value = dropdown.options[dropdown.selectedIndex].value;
+        // console.log(current_value);
+      //make the target with the same value to show
+      var target = document.getElementsByClassName(current_value);
+      for(i=0;i<target.length;i++) {
+        target[i].style.display = 'block';
+      }
+
+      //cigg image show
+      var container = document.getElementById('ciggImageContainer');
+      //clear image
+      container.textContent = ''; 
+      //count the number of image to show
+      var cigCount = document.getElementById("cigText").querySelectorAll(".cigg");
+      var cigNumber = cigCount[current_value].innerHTML;
+      //display
+      for(i=0;i<cigNumber;i++) {
+        var newDiv = document.createElement('div'); 
+          newDiv.className = 'ciggImage'; 
+          newDiv.innerHTML = "";
+          container.appendChild(newDiv);
+      }
+
+    }
+
+  </script>
+</html>

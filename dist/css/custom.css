@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("../fonts/HelveticaNeue.ttf") format("truetype"); }
+html,
+body,
+ul,
+li,
+p,
+span,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  font-family: "HelveticaNeue", Arial, sans-serif; }
+
+p {
+  line-height: 1.35em;
+  margin: 15px 0; }
+  p.strong {
+    font-weight: bold; }
+
+body {
+  background-color: #fff; }
+
+.container {
+  width: 820px;
+  height: auto;
+  margin: 2% auto;
+  overflow: hidden; }
+  @media (max-width: 991px) {
+    .container {
+      width: calc(100% - 20px);
+      padding: 10px; } }
+
+.img-fluid {
+  max-width: 100%;
+  height: auto; }
+
+.clearfix {
+  clear: both;
+  float: none; }
+
+section.top .languageBar {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+  padding: 2px 0;
+  font-size: 0.75em;
+  margin-bottom: 5px; }
+section.top .title {
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+  section.top .title h1 {
+    font-size: 2.5em;
+    line-height: 1.25em; }
+    @media (max-width: 991px) {
+      section.top .title h1 {
+        font-size: 1.5em; } }
+section.top .subtitle {
+  position: relative;
+  padding: 5px 0;
+  display: flex; }
+  section.top .subtitle span {
+    font-size: 0.8em; }
+    @media (max-width: 991px) {
+      section.top .subtitle span {
+        font-size: 0.6em; } }
+    section.top .subtitle span.time {
+      position: relative;
+      padding-right: 5px; }
+      section.top .subtitle span.time:after {
+        content: "|";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%; }
+    section.top .subtitle span.author {
+      position: relative;
+      padding: 0 5px; }
+    section.top .subtitle span.category {
+      position: absolute;
+      right: 0; }
+
+section.banner {
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 10px 0; }
+  section.banner .image {
+    position: relative; }
+  section.banner .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 20px);
+    height: 15%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px; }
+    @media (max-width: 991px) {
+      section.banner .text {
+        height: 45%;
+        width: calc(100% - 4px);
+        padding: 5px;
+        font-size: 0.6em;
+        margin: 0; } }
+
+section.content .cigSimulator {
+  position: relative;
+  display: flex;
+  border-top: 1px solid rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+  padding: 10px; }
+  @media (max-width: 991px) {
+    section.content .cigSimulator {
+      display: block;
+      padding: 10px 0; } }
+@media (max-width: 991px) {
+  section.content p {
+    font-size: 0.75em; } }
+section.content p.title {
+  font-size: 1em;
+  display: block;
+  margin: 0 0 5px; }
+  @media (max-width: 991px) {
+    section.content p.title {
+      font-size: 0.75em; } }
+section.content p.subtext {
+  font-size: 0.8em; }
+  @media (max-width: 991px) {
+    section.content p.subtext {
+      font-size: 0.6em; } }
+section.content span.result {
+  font-size: 1.15em; }
+section.content .cityPicker {
+  width: 33%; }
+  @media (max-width: 991px) {
+    section.content .cityPicker {
+      width: 100%; } }
+section.content .aqiNumber {
+  width: 33%; }
+  @media (max-width: 991px) {
+    section.content .aqiNumber {
+      width: 100%;
+      margin: 10px 0; } }
+  section.content .aqiNumber span {
+    display: none; }
+section.content .cigaretteNumber {
+  width: 33%; }
+  @media (max-width: 991px) {
+    section.content .cigaretteNumber {
+      width: 100%; } }
+  section.content .cigaretteNumber #cigText {
+    display: none; }
+  section.content .cigaretteNumber #ciggImageContainer .ciggImage {
+    display: inline-block;
+    height: 100px;
+    width: 40px;
+    background-image: url("../img/ciggrette_icon.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat; }
+
+/*# sourceMappingURL=custom.css.map */
